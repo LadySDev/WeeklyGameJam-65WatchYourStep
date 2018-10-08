@@ -311,6 +311,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelTitle: {fileID: 1079363914770608, guid: 528ffc678aa08ae43a7a4fbfd17dbc1f, type: 2}
+  panelOptions: {fileID: 1120289500877412, guid: de151b30af28d164caf1ad9340541d9d,
+    type: 2}
 --- !u!4 &1397810290
 Transform:
   m_ObjectHideFlags: 0
