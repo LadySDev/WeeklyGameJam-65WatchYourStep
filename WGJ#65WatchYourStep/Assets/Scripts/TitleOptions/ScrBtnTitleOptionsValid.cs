@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitleOptions/BtnValid")]
 public class ScrBtnTitleOptionsValid : MonoBehaviour {
 
     private Button btnValid;
@@ -24,6 +25,17 @@ public class ScrBtnTitleOptionsValid : MonoBehaviour {
 
     private void Valid()
     {
+        // String Language
+        string strLang = GameObject.Find("DropdownTitleOptionsLanguage").GetComponent<Dropdown>().captionText.text;
+        foreach (string language in scrGM.GetLanguages())
+        {
+            if (strLang == language)
+            {
+                scrGM.SetCurrentLanguage(language);
+            }
+        }
+
+        // String Resolution
         string strRes = GameObject.Find("DropdownTitleOptionsResolution").GetComponent<Dropdown>().captionText.text;
 
         string[] str = strRes.Split('x');
@@ -38,6 +50,7 @@ public class ScrBtnTitleOptionsValid : MonoBehaviour {
             }
         }
 
+        // Change Bool FullScreen
         scrGM.SetFullScreen(GameObject.Find("ToggleTitleOptionFullScreen").GetComponent<Toggle>().isOn);
 
         scrGM.ShowTitle();

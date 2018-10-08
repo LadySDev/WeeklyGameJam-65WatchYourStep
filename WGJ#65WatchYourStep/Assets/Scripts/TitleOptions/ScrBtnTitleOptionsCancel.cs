@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitleOptions/BtnCancel")]
 public class ScrBtnTitleOptionsCancel : MonoBehaviour {
 
     private Button btnCancel;

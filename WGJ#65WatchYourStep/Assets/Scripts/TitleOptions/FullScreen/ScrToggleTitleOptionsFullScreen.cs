@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitleOptions/FullScreen/ToggleFullScreen")]
 public class ScrToggleTitleOptionsFullScreen : MonoBehaviour {
 
 	// Use this for initialization

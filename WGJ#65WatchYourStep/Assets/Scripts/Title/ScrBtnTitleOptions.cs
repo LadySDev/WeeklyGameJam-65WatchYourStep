@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitle/BtnOptions")]
 public class ScrBtnTitleOptions : MonoBehaviour {
 
     private Button btnOptions;

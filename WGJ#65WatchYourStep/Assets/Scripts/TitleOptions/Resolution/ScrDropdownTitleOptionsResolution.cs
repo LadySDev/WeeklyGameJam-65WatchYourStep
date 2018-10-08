@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitleOptions/Resolution/DropdownResolution")]
 public class ScrDropdownTitleOptionsResolution : MonoBehaviour {
 
     private ScrGameManager scrGM;

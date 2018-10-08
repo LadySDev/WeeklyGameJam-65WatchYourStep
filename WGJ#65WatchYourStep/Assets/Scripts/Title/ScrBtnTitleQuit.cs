@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[AddComponentMenu("Scripts/PanelTitle/BtnQuit")]
 public class ScrBtnTitleQuit : MonoBehaviour {
 
     private Button btnQuit;

@@ -1,9 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class ScrGameManager : MonoBehaviour {        
+public class ScrGameManager : MonoBehaviour {
+
+    //  LANGUAGE
+
+    private List<string> languages = new List<string>(){ "English", "French"};
+    public List<string> GetLanguages() { return languages; }
+
+    private string currentLanguage;
+    public void SetCurrentLanguage(string language) { currentLanguage = language; }
+    public string GetCurrentLanguage() { return currentLanguage; }
+
+    private ScrLanguage currentScrLanguage;
+    public ScrLanguage GetCurrentScrLanguage() { return currentScrLanguage; }
+
+    //  RESOLUTION
 
     private static List<Resolution> resolutions;
     public List<Resolution> GetResolutions() { return resolutions; }
@@ -11,6 +24,8 @@ public class ScrGameManager : MonoBehaviour {
     private Resolution currentResolution;
     public void SetCurrentResolution(Resolution res) { currentResolution = res; }
     public Resolution GetCurrentResolution() { return currentResolution; }
+
+    //  FULLSCREEN
 
     private bool fullscreen;
     public void SetFullScreen(bool full) { fullscreen = full; }
@@ -28,6 +43,11 @@ public class ScrGameManager : MonoBehaviour {
 
     private void Awake()
     {
+        //Set English Language
+        currentLanguage = languages[0];
+
+        SetCurrentScrLanguage();
+
         resolutions = new List<Resolution>();
 
         foreach (Resolution res in Screen.resolutions)
@@ -59,7 +79,20 @@ public class ScrGameManager : MonoBehaviour {
 	void Update () {
 
         SetResolution(currentResolution.width, currentResolution.height, fullscreen);
+        SetCurrentScrLanguage();
 
+    }
+
+    private void SetCurrentScrLanguage()
+    {
+        if (currentLanguage == languages[0])
+        {
+            currentScrLanguage = new ScrEnglish();
+        }
+        else if (currentLanguage == languages[1])
+        {
+            currentScrLanguage = new ScrFrench();
+        }
     }
 
     private void SetResolution(int width, int height, bool fullscreen)
