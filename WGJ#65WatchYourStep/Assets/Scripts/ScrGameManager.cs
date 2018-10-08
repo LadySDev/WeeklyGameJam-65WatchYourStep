@@ -14,6 +14,7 @@ public class ScrGameManager : MonoBehaviour {
 
     private bool fullscreen;
     public void SetFullScreen(bool full) { fullscreen = full; }
+    public bool GetFullScreen() { return fullscreen; }
 
     private GameObject canva;
 

@@ -38,6 +38,8 @@ public class ScrBtnTitleOptionsValid : MonoBehaviour {
             }
         }
 
+        scrGM.SetFullScreen(GameObject.Find("ToggleTitleOptionFullScreen").GetComponent<Toggle>().isOn);
+
         scrGM.ShowTitle();
         scrGM.HideOptions();
     }
