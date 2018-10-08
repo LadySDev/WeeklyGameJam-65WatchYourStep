@@ -8,9 +8,14 @@ public class ScrGameManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject panelTitle;
+    private GameObject instanceTitle;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private GameObject panelOptions;
+    private GameObject instanceOptions;
+
+    // Use this for initialization
+    void Start () {
 
         canva = GameObject.Find("Canvas");
 
@@ -25,7 +30,22 @@ public class ScrGameManager : MonoBehaviour {
 
     public void ShowTitle()
     {
-        Instantiate(panelTitle, canva.transform);
+        instanceTitle = Instantiate(panelTitle, canva.transform);
+    }
+
+    public void HideTitle()
+    {
+        Destroy(instanceTitle);
+    }
+
+    public void ShowOptions()
+    {
+        instanceOptions = Instantiate(panelOptions, canva.transform);
+    }
+
+    public void HideOptions()
+    {
+        Destroy(instanceOptions);
     }
 
 }
