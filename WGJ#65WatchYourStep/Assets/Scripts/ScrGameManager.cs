@@ -54,8 +54,8 @@ public class ScrGameManager : MonoBehaviour {
     public bool GetIsPlayerTurn() { return isPlayerTurn; }
 
     [SerializeField]
-    private GameObject player;
-    private GameObject instancePlayer;
+    private GameObject level1;
+    private GameObject instanceLevel;
 
     private void Awake()
     {
@@ -69,9 +69,13 @@ public class ScrGameManager : MonoBehaviour {
 
         foreach (Resolution res in Screen.resolutions)
         {
-            resolutions.Add(res);
+            if (res.height == (res.width / 16) * 9)
+            {
+                resolutions.Add(res);
+            }
+            
 
-            if (res.width == 720 && res.height == 480)
+            if (res.width == 1280 && res.height == 720)
             {
                 currentResolution = res;
             }
@@ -154,11 +158,8 @@ public class ScrGameManager : MonoBehaviour {
     {
         HideTitle();
 
-        //level1 is a game object with level1 script as component
-        gameObject.AddComponent<ScrLevel1>();
-
-        instancePlayer = Instantiate(player);
-        //place player on level1 start
+        instanceLevel = Instantiate(level1);
+        
     }
 
 }
