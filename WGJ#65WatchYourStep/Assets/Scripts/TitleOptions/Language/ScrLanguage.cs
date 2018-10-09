@@ -11,4 +11,9 @@ public class ScrLanguage {
         return dictio[key];
     }
 
+    public bool IsKeyContained(string key)
+    {
+        return dictio.ContainsKey(key);
+    }
+
 }

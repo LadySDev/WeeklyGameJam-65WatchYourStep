@@ -6,14 +6,14 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/PanelTitleOptions/Resolution/TxtResolution")]
 public class ScrTxtTitleOptionsResolution : MonoBehaviour {
 
-    private ScrLanguage currentScrLanguage;
+    private string word = "Resolution";
 
     // Use this for initialization
     void Start()
     {
         ScrGameManager scrGM = GameObject.Find("GameManager").GetComponent<ScrGameManager>();
 
-        currentScrLanguage = scrGM.GetCurrentScrLanguage();
-        gameObject.GetComponent<Text>().text = currentScrLanguage.TranslationWord("Resolution");
+        scrGM.TranslateWord(word, gameObject.GetComponent<Text>());
+
     }
 }

@@ -6,15 +6,15 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/PanelTitleOptions/Language/TxtLanguage")]
 public class ScrTxtTitleOptionsLanguage : MonoBehaviour {
 
-    private ScrLanguage currentScrLanguage;
+    private string word = "Language";
 
     // Use this for initialization
     void Start()
     {
         ScrGameManager scrGM = GameObject.Find("GameManager").GetComponent<ScrGameManager>();
 
-        currentScrLanguage = scrGM.GetCurrentScrLanguage();
-        gameObject.GetComponent<Text>().text = currentScrLanguage.TranslationWord("Language");
+        scrGM.TranslateWord(word, gameObject.GetComponent<Text>());
+
     }
-       
+
 }

@@ -6,14 +6,14 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/PanelTitle/TxtBtnOptions")]
 public class ScrTxtBtnTitleOptions : MonoBehaviour {
 
-    private ScrLanguage currentScrLanguage;
+    private string word = "Options";
 
     // Use this for initialization
     void Start()
     {
         ScrGameManager scrGM = GameObject.Find("GameManager").GetComponent<ScrGameManager>();
 
-        currentScrLanguage = scrGM.GetCurrentScrLanguage();
-        gameObject.GetComponent<Text>().text = currentScrLanguage.TranslationWord("Options");
+        scrGM.TranslateWord(word, gameObject.GetComponent<Text>());
+
     }
 }

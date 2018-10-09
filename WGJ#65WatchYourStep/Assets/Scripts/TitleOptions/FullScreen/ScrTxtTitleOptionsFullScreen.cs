@@ -6,14 +6,14 @@ using UnityEngine.UI;
 [AddComponentMenu("Scripts/PanelTitleOptions/FullScreen/TxtFullScreen")]
 public class ScrTxtTitleOptionsFullScreen : MonoBehaviour {
 
-    private ScrLanguage currentScrLanguage;
+    private string word = "FullScreen";
 
     // Use this for initialization
     void Start()
     {
         ScrGameManager scrGM = GameObject.Find("GameManager").GetComponent<ScrGameManager>();
 
-        currentScrLanguage = scrGM.GetCurrentScrLanguage();
-        gameObject.GetComponent<Text>().text = currentScrLanguage.TranslationWord("FullScreen");
+        scrGM.TranslateWord(word, gameObject.GetComponent<Text>());
+
     }
 }
