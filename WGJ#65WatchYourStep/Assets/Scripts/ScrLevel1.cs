@@ -24,13 +24,13 @@ public class ScrLevel1 : MonoBehaviour {
         scrGM = GameObject.Find("GameManager").GetComponent<ScrGameManager>();
 
         // Player
-        startPosPlayer = new Vector3(-6.5f, -3.5f, 0);
+        startPosPlayer = new Vector3(-8, -4, 0);
 
         instancePlayer = Instantiate(player);
         instancePlayer.transform.position = startPosPlayer;
                 
         // Ennemy
-        startPosEnnemy1 = new Vector3(6.5f, 3.5f, 0);
+        startPosEnnemy1 = new Vector3(6, 2, 0);
 
         instanceEnnemy1 = Instantiate(ennemy1);
         instanceEnnemy1.transform.position = startPosEnnemy1;
@@ -39,20 +39,19 @@ public class ScrLevel1 : MonoBehaviour {
         pathEnnemy1 = new Vector3[]
         {
             startPosEnnemy1,
-            new Vector3(6.5f, 2.5f, 0),
-            new Vector3(6.5f, 1.5f, 0),
-            new Vector3(6.5f, 0.5f, 0),
-            new Vector3(5.5f, 0.5f, 0),
-            new Vector3(4.5f, 0.5f, 0),
-            new Vector3(3.5f, 0.5f, 0),
-            new Vector3(2.5f, 0.5f, 0),
-            new Vector3(1.5f, 0.5f, 0),
-            new Vector3(0.5f, 0.5f, 0),
-            new Vector3(-1.5f, 0.5f, 0),
-            new Vector3(-2.5f, 0.5f, 0),
-            new Vector3(-3.5f, 0.5f, 0),
-            new Vector3(-4.5f, 0.5f, 0),
-            new Vector3(-5.5f, 0.5f, 0),
+            new Vector3(6, 1, 0),
+            new Vector3(5, 1, 0),
+            new Vector3(4, 1, 0),
+            new Vector3(4, 0, 0),            
+            new Vector3(3, 0, 0),
+            new Vector3(2, 0, 0),
+            new Vector3(1, 0, 0),
+            new Vector3(0, 0, 0),
+            new Vector3(-1, 0, 0),
+            new Vector3(-2, 0, 0),
+            new Vector3(-3, 0, 0),
+            new Vector3(-4, 0, 0),
+            new Vector3(-5, 0, 0),
         };
 
         instanceEnnemy1.GetComponent<ScrEnnemyMoves>().SetPath(pathEnnemy1);
